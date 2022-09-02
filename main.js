@@ -18,27 +18,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }))
     operators.forEach((op) => op.addEventListener('click', function(e) {
         pressOperator(e.target.textContent);
-        before.textContent = beforeValue + ' ' + operator;
-        after.textContent = currentValue;
+        //before.textContent = beforeValue;
+        after.textContent = beforeValue;
     }))
 
     clear.addEventListener('click', function () {
         beforeValue = '';
         currentValue = '';
         operator = '';
-        before.textContent = beforeValue;
+        //before.textContent = beforeValue;
         after.textContent = currentValue;
     })
 
     equal.addEventListener('click', function() {
         if(currentValue != '' && beforeValue != '') {
             calculate();
-            before.textContent = '';
-            after.textContent = beforeValue;
+            //before.textContent = '';
+            after.textContent = currentValue;
         }
     })
     decimal.addEventListener('click', function() {
-        before.textContent = beforeValue;
         addDecimal();
         after.textContent = currentValue;
     })
@@ -80,9 +79,9 @@ function calculate() {
         beforeValue /= currentValue;
     }
     beforeValue = round(beforeValue);
+    currentValue = beforeValue;
     beforeValue = beforeValue.toString();
     currentValue = currentValue.toString();
-    console.log(beforeValue);
 }
 
 function round(num) {
