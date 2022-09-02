@@ -6,9 +6,15 @@ body {
     height: 100vh;
 }
 
+.display {
+    color: white;
+    width: 100px;
+    display: flex;
+    align-items: flex-end;
+}
 
 .calculator {
-    background-color: gray;
+    background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,6 +31,22 @@ button {
     height: 40px;
     text-align: center;
     border-radius: 50%;
+    border: none;
+}
+
+.number {
+    background-color: rgb(40, 38, 38);
+    color: white;
+}
+
+.operator .equal{
+    background-color: orange;
+    color: white;
+}
+
+.backspace .clear {
+    color: black;
+    background-color: grey;
 }
 
 #big {
